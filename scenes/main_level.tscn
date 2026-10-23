@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dm50p1saykm1r"]
+
+[ext_resource type="PackedScene" uid="uid://b5uqxhmsrsxj6" path="res://scenes/rat_player.tscn" id="1_v3uhd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5vfr"]
+size = Vector2(214, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v5vfr"]
+
+[node name="MainLevel" type="Node2D" unique_id=900570126]
+
+[node name="RatPlayer" parent="." unique_id=133601460 instance=ExtResource("1_v3uhd")]
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=294945912]
+position = Vector2(0, 53)
+
+[node name="PlatformCollision" type="CollisionShape2D" parent="Platform" unique_id=2068280067]
+shape = SubResource("RectangleShape2D_v5vfr")
+
+[node name="PlatformSprite" type="Sprite2D" parent="Platform" unique_id=1594608098]
+scale = Vector2(214, 20)
+texture = SubResource("PlaceholderTexture2D_v5vfr")
