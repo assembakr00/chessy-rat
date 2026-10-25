@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu3c13d337i48"
+path="res://.godot/imported/aug_26_jazz.mp3-a994db6544ddbf8503248587cd080cc7.mp3str"
+
+[deps]
+
+source_file="res://assets/music and soundeffects/aug_26_jazz.mp3"
+dest_files=["res://.godot/imported/aug_26_jazz.mp3-a994db6544ddbf8503248587cd080cc7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

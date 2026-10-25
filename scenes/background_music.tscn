@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dpkekjdc6w8rx"]
+
+[ext_resource type="AudioStream" uid="uid://bu3c13d337i48" path="res://assets/music and soundeffects/aug_26_jazz.mp3" id="1_0rulj"]
+
+[node name="Background music" type="AudioStreamPlayer2D" unique_id=2129712838]
+stream = ExtResource("1_0rulj")
+autoplay = true
+bus = &"Music"
