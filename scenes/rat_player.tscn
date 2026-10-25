@@ -189,3 +189,19 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691336874]
 position = Vector2(7, 2)
 shape = SubResource("RectangleShape2D_ufxs0")
+
+[node name="CountdownText" type="RichTextLabel" parent="." unique_id=735778284]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -399.0
+offset_bottom = -231.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 48
+text = "10:00"
+
+[node name="CountdownTimer" type="Timer" parent="CountdownText" unique_id=1938653924]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="CountdownText/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
