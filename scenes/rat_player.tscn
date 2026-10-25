@@ -174,18 +174,51 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufxs0"]
 size = Vector2(27, 19)
 
-[node name="Ratplayer" type="CharacterBody2D" unique_id=1678520552]
+[node name="RatPlayer" type="CharacterBody2D" unique_id=1678520552]
 script = ExtResource("1_script")
 
 [node name="Background music" parent="." unique_id=1088092924 instance=ExtResource("2_music")]
 
-[node name="Ratplayer" type="AnimatedSprite2D" parent="." unique_id=1556218559]
+[node name="RatPlayer" type="AnimatedSprite2D" parent="." unique_id=1556218559]
 sprite_frames = SubResource("SpriteFrames_rglt0")
 animation = &"walk"
 autoplay = "idle"
 
-[node name="Camera2D" type="Camera2D" parent="Ratplayer" unique_id=980549707]
+[node name="Camera2D" type="Camera2D" parent="RatPlayer" unique_id=980549707]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691336874]
 position = Vector2(7, 2)
 shape = SubResource("RectangleShape2D_ufxs0")
+
+[node name="CountdownText" type="RichTextLabel" parent="." unique_id=735778284]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -399.0
+offset_bottom = -231.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 48
+text = "10:00"
+
+[node name="CountdownTimer" type="Timer" parent="CountdownText" unique_id=1938653924]
+one_shot = true
+autostart = true
+
+[node name="CheeseNotifier" type="RichTextLabel" parent="." unique_id=741565558]
+visible = false
+offset_left = 263.0
+offset_top = -323.0
+offset_right = 506.0
+offset_bottom = -238.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/normal_font_size = 48
+text = "+1 Cheese"
+
+[node name="NotifierTimer" type="Timer" parent="CheeseNotifier" unique_id=1469741443]
+one_shot = true
+
+[connection signal="timeout" from="CountdownText/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="timeout" from="CheeseNotifier/NotifierTimer" to="." method="_on_notifier_timer_timeout"]

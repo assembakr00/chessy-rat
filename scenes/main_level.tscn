@@ -358,6 +358,7 @@ tile_set = SubResource("TileSet_rglt0")
 [node name="RatPlayer" parent="." unique_id=1678520552 instance=ExtResource("1_v3uhd")]
 position = Vector2(-807, -229)
 
+<<<<<<< HEAD
 [node name="Cheese" parent="." unique_id=686764432 instance=ExtResource("3_6we3w")]
 position = Vector2(-1588, 370)
 
@@ -417,3 +418,9 @@ position = Vector2(1898, 392)
 
 [node name="Cheese20" parent="." unique_id=150629699 instance=ExtResource("3_6we3w")]
 position = Vector2(328, 504)
+=======
+[node name="Node2D" type="Node2D" parent="." unique_id=269232058]
+
+[node name="Cheese" parent="Node2D" unique_id=686764432 instance=ExtResource("3_6we3w")]
+position = Vector2(156, 24)
+>>>>>>> c7e161b02ed445d905b66a5a1e25f0b49264e076

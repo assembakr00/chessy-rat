@@ -3,7 +3,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@onready var rat_sprite: AnimatedSprite2D = $Ratplayer
+var time_left = 600
+
+var cheese_collected = 0
+
+@onready var rat_sprite: AnimatedSprite2D = $RatPlayer
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -26,3 +31,24 @@ func _physics_process(delta: float) -> void:
 		rat_sprite.play("walk")
 	else:
 		rat_sprite.play("idle")
+
+func collect_cheese():
+	cheese_collected += 1
+	$CheeseNotifier.show()
+	$CheeseNotifier/NotifierTimer.start()
+
+func _on_countdown_timer_timeout() -> void:
+	# Decrease time
+	time_left -= 1
+	
+	var time_text = str(floor(time_left / 60)) + ":" + str(time_left % 60)
+	
+	$CountdownText.text = time_text
+	
+	# Restart second clock
+	$CountdownText/CountdownTimer.start()
+	
+
+
+func _on_notifier_timer_timeout() -> void:
+	$CheeseNotifier.hide()
