@@ -172,7 +172,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufxs0"]
-size = Vector2(27, 19)
+size = Vector2(15, 12.5)
 
 [node name="RatPlayer" type="CharacterBody2D" unique_id=1678520552]
 script = ExtResource("1_script")
@@ -187,7 +187,7 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="RatPlayer" unique_id=980549707]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691336874]
-position = Vector2(7, 2)
+position = Vector2(6.5, 5.25)
 shape = SubResource("RectangleShape2D_ufxs0")
 
 [node name="CountdownText" type="RichTextLabel" parent="." unique_id=735778284]
@@ -198,7 +198,7 @@ offset_bottom = -231.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 48
-text = "10:00"
+text = "5:00"
 
 [node name="CountdownTimer" type="Timer" parent="CountdownText" unique_id=1938653924]
 one_shot = true
