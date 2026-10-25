@@ -33,13 +33,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		rat_sprite.play("idle")
 
-func _process(delta: float) -> void:
-	# When you lose
+func _process(_delta: float) -> void:
 	if time_left <= 0:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/lose_menu.tscn")
-	
-	# When you win
-	if cheese_collected == max_cheese:
+	elif cheese_collected >= max_cheese:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
 func collect_cheese():
@@ -51,8 +48,10 @@ func _on_countdown_timer_timeout() -> void:
 	# Decrease time
 	time_left -= 1
 	
-	var time_text = str(floor(time_left / 60)) + ":" + str(time_left % 60)
-	
+	var minutes := floori(float(time_left) / 60.0)
+	var seconds: int = time_left % 60
+	var time_text := "%d:%02d" % [minutes, seconds]
+
 	$CountdownText.text = time_text
 	
 	# Restart second clock

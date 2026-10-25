@@ -416,4 +416,5 @@ position = Vector2(1808, -180)
 position = Vector2(1898, 392)
 
 [node name="Cheese20" parent="." unique_id=150629699 instance=ExtResource("3_6we3w")]
+
 position = Vector2(156, 24)
