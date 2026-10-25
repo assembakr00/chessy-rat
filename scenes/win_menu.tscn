@@ -37,10 +37,21 @@ text = "YOU WIN!"
 [node name="Restart" type="Button" parent="." unique_id=1104153038]
 layout_mode = 0
 offset_left = 484.0
-offset_top = 420.0
+offset_top = 436.0
 offset_right = 666.0
-offset_bottom = 473.0
+offset_bottom = 489.0
 theme_override_font_sizes/font_size = 32
 text = "Play Again?"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=749246913]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 353.0
+offset_right = 837.0
+offset_bottom = 447.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "You ate the cheese and didn't starve!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
