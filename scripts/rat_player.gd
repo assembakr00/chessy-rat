@@ -34,6 +34,11 @@ func _physics_process(delta: float) -> void:
 		rat_sprite.play("idle")
 
 func _process(delta: float) -> void:
+	# When you lose
+	if time_left <= 0:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/lose_menu.tscn")
+	
+	# When you win
 	if cheese_collected == max_cheese:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 

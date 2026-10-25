@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://otwiuuke6f4w"]
+
+[ext_resource type="Script" uid="uid://ccfye0n0iu36g" path="res://scripts/win_menu.gd" id="1_qiql3"]
+
+[sub_resource type="Gradient" id="Gradient_w6x7u"]
+offsets = PackedFloat32Array(0, 0.50721157, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v5vfr"]
+gradient = SubResource("Gradient_w6x7u")
+
+[node name="LoseMenu" type="Control" unique_id=388889099]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qiql3")
+
+[node name="LoseBackground" type="TextureRect" parent="." unique_id=1390793342]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture1D_v5vfr")
+
+[node name="LoseText" type="RichTextLabel" parent="." unique_id=661859963]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 158.0
+offset_right = 1047.0
+offset_bottom = 384.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 160
+text = "YOU LOSE!"
+
+[node name="Restart" type="Button" parent="." unique_id=1104153038]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 420.0
+offset_right = 666.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 32
+text = "Play Again?"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
