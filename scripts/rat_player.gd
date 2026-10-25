@@ -5,7 +5,9 @@ const JUMP_VELOCITY = -400.0
 
 var time_left = 600
 
-@onready var rat_sprite: AnimatedSprite2D = $Ratplayer
+var cheese_collected = 0
+
+@onready var rat_sprite: AnimatedSprite2D = $RatPlayer
 
 
 func _physics_process(delta: float) -> void:
@@ -30,6 +32,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		rat_sprite.play("idle")
 
+func collect_cheese():
+	cheese_collected += 1
+	$CheeseNotifier.show()
+	$CheeseNotifier/NotifierTimer.start()
 
 func _on_countdown_timer_timeout() -> void:
 	# Decrease time
@@ -42,3 +48,7 @@ func _on_countdown_timer_timeout() -> void:
 	# Restart second clock
 	$CountdownText/CountdownTimer.start()
 	
+
+
+func _on_notifier_timer_timeout() -> void:
+	$CheeseNotifier.hide()

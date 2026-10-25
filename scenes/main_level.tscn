@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b5uqxhmsrsxj6" path="res://scenes/rat_player.tscn" id="1_v3uhd"]
 [ext_resource type="Texture2D" uid="uid://dk2xxdq0jtxlp" path="res://assets/tileset.png" id="2_6we3w"]
+[ext_resource type="PackedScene" uid="uid://co7fqg7ywaffm" path="res://scenes/cheese.tscn" id="3_6we3w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufxs0"]
 texture = ExtResource("2_6we3w")
@@ -356,3 +357,8 @@ tile_set = SubResource("TileSet_rglt0")
 
 [node name="RatPlayer" parent="." unique_id=1678520552 instance=ExtResource("1_v3uhd")]
 position = Vector2(-807, -229)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=269232058]
+
+[node name="Cheese" parent="Node2D" unique_id=686764432 instance=ExtResource("3_6we3w")]
+position = Vector2(156, 24)
