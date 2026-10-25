@@ -41,8 +41,10 @@ func _on_countdown_timer_timeout() -> void:
 	# Decrease time
 	time_left -= 1
 	
-	var time_text = str(floor(time_left / 60)) + ":" + str(time_left % 60)
-	
+	var minutes := floori(float(time_left) / 60.0)
+	var seconds: int = time_left % 60
+	var time_text := "%d:%02d" % [minutes, seconds]
+
 	$CountdownText.text = time_text
 	
 	# Restart second clock
