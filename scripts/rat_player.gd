@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 var time_left = 600
 
 var cheese_collected = 0
+var max_cheese = 20 # Total number of cheeses hidden
 
 @onready var rat_sprite: AnimatedSprite2D = $RatPlayer
 
@@ -31,6 +32,13 @@ func _physics_process(delta: float) -> void:
 		rat_sprite.play("walk")
 	else:
 		rat_sprite.play("idle")
+
+func _process(delta: float) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		cheese_collected = max_cheese # TEMP for testing
+	
+	if cheese_collected == max_cheese:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
 func collect_cheese():
 	cheese_collected += 1

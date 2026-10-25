@@ -361,4 +361,4 @@ position = Vector2(-807, -229)
 [node name="Node2D" type="Node2D" parent="." unique_id=269232058]
 
 [node name="Cheese" parent="Node2D" unique_id=686764432 instance=ExtResource("3_6we3w")]
-position = Vector2(156, 24)
+position = Vector2(154, 16)
