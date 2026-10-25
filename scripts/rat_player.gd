@@ -34,9 +34,6 @@ func _physics_process(delta: float) -> void:
 		rat_sprite.play("idle")
 
 func _process(delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		cheese_collected = max_cheese # TEMP for testing
-	
 	if cheese_collected == max_cheese:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 

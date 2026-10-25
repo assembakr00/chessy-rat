@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://di8ir43857fjf"]
 
+[ext_resource type="Script" uid="uid://ccfye0n0iu36g" path="res://scripts/win_menu.gd" id="1_ki55t"]
+
 [sub_resource type="Gradient" id="Gradient_w6x7u"]
 offsets = PackedFloat32Array(0, 0.50721157, 1)
 colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1, 0.44471154, 1, 0.44471154, 1)
@@ -14,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ki55t")
 
 [node name="WinBackground" type="TextureRect" parent="." unique_id=1390793342]
 layout_mode = 0
@@ -30,3 +33,14 @@ offset_bottom = 384.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 160
 text = "YOU WIN!"
+
+[node name="Restart" type="Button" parent="." unique_id=1104153038]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 420.0
+offset_right = 666.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 32
+text = "Play Again?"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
