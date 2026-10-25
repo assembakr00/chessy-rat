@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var time_left = 600
+var time_left = 300
 
 var cheese_collected = 0
 var max_cheese = 20 # Total number of cheeses hidden

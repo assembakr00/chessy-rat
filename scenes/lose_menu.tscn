@@ -24,6 +24,16 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture1D_v5vfr")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1836768209]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 353.0
+offset_right = 845.0
+offset_bottom = 417.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "You starved without the cheese"
+
 [node name="LoseText" type="RichTextLabel" parent="." unique_id=661859963]
 layout_mode = 0
 offset_left = 209.0
@@ -37,9 +47,9 @@ text = "YOU LOSE!"
 [node name="Restart" type="Button" parent="." unique_id=1104153038]
 layout_mode = 0
 offset_left = 484.0
-offset_top = 420.0
+offset_top = 436.0
 offset_right = 666.0
-offset_bottom = 473.0
+offset_bottom = 489.0
 theme_override_font_sizes/font_size = 32
 text = "Play Again?"
 
