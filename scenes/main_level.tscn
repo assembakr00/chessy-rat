@@ -356,7 +356,11 @@ tile_map_data = PackedByteArray("AAD//wIAAAACAAAAAAD//wMAAAACAAEAAAAAAAIAAAADAAA
 tile_set = SubResource("TileSet_rglt0")
 
 [node name="RatPlayer" parent="." unique_id=1678520552 instance=ExtResource("1_v3uhd")]
-position = Vector2(-807, -229)
+position = Vector2(-2502, -251)
+
+[node name="Camera2D" type="Camera2D" parent="RatPlayer" unique_id=434844547]
+limit_left = -3195
+limit_right = 6232
 
 [node name="Cheese" parent="." unique_id=686764432 instance=ExtResource("3_6we3w")]
 position = Vector2(-1588, 370)
